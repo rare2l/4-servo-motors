@@ -1,0 +1,56 @@
+#include <Servo.h> // Include the Servo library
+
+Servo servo1; // Connected to pin 9
+Servo servo2; // Connected to pin 8
+Servo servo3; // Connected to pin 7
+Servo servo4; // Connected to pin 6
+Servo servo5; // Connected to pin 5
+Servo servo6; // Connected to pin 4
+
+unsigned long startTime;
+
+void setup() {
+  servo1.attach(9);
+  servo2.attach(8);
+  servo3.attach(7);
+  servo4.attach(6);
+  servo5.attach(5);
+  servo6.attach(4);
+
+  startTime = millis(); // Record the start time
+}
+
+void loop() {
+  // Run sweep motion for 2 seconds
+  if (millis() - startTime < 2000) {
+    for (int pos = 0; pos <= 180; pos += 1) {
+      servo1.write(pos);
+      servo2.write(pos);
+      servo3.write(pos);
+      servo4.write(pos);
+      servo5.write(pos);
+      servo6.write(pos);
+      delay(5);
+    }
+
+    for (int pos = 180; pos >= 0; pos -= 1) {
+      servo1.write(pos);
+      servo2.write(pos);
+      servo3.write(pos);
+      servo4.write(pos);
+      servo5.write(pos);
+      servo6.write(pos);
+      delay(5);
+    }
+  } else {
+    // Hold all servos at 90 degrees
+    servo1.write(90);
+    servo2.write(90);
+    servo3.write(90);
+    servo4.write(90);
+    servo5.write(90);
+    servo6.write(90);
+
+    while (true); // Stop repeating the loop
+  }
+}
