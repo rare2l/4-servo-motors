@@ -8,7 +8,8 @@ This project includes two main components:
    - Control 4 servo motors.
    - Perform a sweep motion for 2 seconds.
    - Then hold all servos at 90 degrees.
-
+     (https://www.tinkercad.com/things/kEMBPNXMAyy-fantastic-sango)
+     
 2. **Humanoid Robot Walking Algorithm:**
    - Logical step-by-step motion design for humanoid walking using servo joints.
 
